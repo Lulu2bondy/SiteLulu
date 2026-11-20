@@ -1,0 +1,127 @@
+/* Réinitialisation de base */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #fff6ea;
+  color: #e2a9f1;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- Fine banderole du haut --- */
+.top-banner {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  padding: 12px 24px;
+  background-color: #fff6ea;
+  border-bottom: 2px solid #af7f5b; /* Démarcation */
+}
+
+.logo-link {
+  justify-self: start;
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 38px;
+  width: auto;
+  object-fit: contain;
+  border-radius: 6px;
+}
+
+.site-title {
+  justify-self: center;
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: #e2a9f1;
+  /* Légère ombre pour faire ressortir le lilas clair sur le fond crème */
+  text-shadow: 0 1px 1px rgba(175, 127, 91, 0.45);
+  text-align: center;
+}
+
+/* --- Zone principale & les 2 rectangles --- */
+.main-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 24px;
+}
+
+.cards-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  justify-content: center;
+  width: 100%;
+  max-width: 900px;
+}
+
+.nav-card {
+  flex: 1 1 320px;
+  max-width: 400px;
+  min-height: 220px;
+  background-color: #fff6ea;
+  border: 2px solid #af7f5b; /* Démarcation du rectangle */
+  border-radius: 16px;
+  padding: 32px 24px;
+  text-decoration: none;
+  color: #e2a9f1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  /* Ombre solide style néo-brutaliste léger en #af7f5b */
+  box-shadow: 6px 6px 0px #af7f5b;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.nav-card h2 {
+  font-size: 1.6rem;
+  margin-bottom: 12px;
+  text-shadow: 0 1px 1px rgba(175, 127, 91, 0.45);
+}
+
+.nav-card p {
+  font-size: 1rem;
+  font-weight: 500;
+  text-shadow: 0 1px 1px rgba(175, 127, 91, 0.35);
+}
+
+/* Effet au survol de la souris */
+.nav-card:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 9px 9px 0px #af7f5b;
+  background-color: #fdf0df;
+}
+
+/* Effet au clic */
+.nav-card:active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px #af7f5b;
+}
+
+/* Adaptation mobile */
+@media (max-width: 600px) {
+  .top-banner {
+    padding: 10px 16px;
+  }
+
+  .site-title {
+    font-size: 1.1rem;
+  }
+
+  .logo {
+    height: 30px;
+  }
+}
