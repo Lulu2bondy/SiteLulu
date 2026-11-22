@@ -19,31 +19,32 @@ body {
   display: grid;
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
-  padding: 12px 24px;
+  padding: 10px 24px;
   background-color: #fff6ea;
   border-bottom: 2px solid #af7f5b; /* Démarcation */
 }
 
 .logo-link {
+  grid-column: 1;
   justify-self: start;
   display: flex;
   align-items: center;
 }
 
 .logo {
-  height: 38px;
+  height: 56px; /* Plus grand à gauche */
   width: auto;
   object-fit: contain;
   border-radius: 6px;
 }
 
 .site-title {
+  grid-column: 2;
   justify-self: center;
   font-size: 1.35rem;
   font-weight: 700;
   letter-spacing: 0.5px;
   color: #e2a9f1;
-  /* Légère ombre pour faire ressortir le lilas clair sur le fond crème */
   text-shadow: 0 1px 1px rgba(175, 127, 91, 0.45);
   text-align: center;
 }
@@ -71,7 +72,7 @@ body {
   max-width: 400px;
   min-height: 220px;
   background-color: #fff6ea;
-  border: 2px solid #af7f5b; /* Démarcation du rectangle */
+  border: 2px solid #af7f5b;
   border-radius: 16px;
   padding: 32px 24px;
   text-decoration: none;
@@ -81,7 +82,6 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
-  /* Ombre solide style néo-brutaliste léger en #af7f5b */
   box-shadow: 6px 6px 0px #af7f5b;
   transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
 }
@@ -98,14 +98,12 @@ body {
   text-shadow: 0 1px 1px rgba(175, 127, 91, 0.35);
 }
 
-/* Effet au survol de la souris */
 .nav-card:hover {
   transform: translate(-3px, -3px);
   box-shadow: 9px 9px 0px #af7f5b;
   background-color: #fdf0df;
 }
 
-/* Effet au clic */
 .nav-card:active {
   transform: translate(2px, 2px);
   box-shadow: 2px 2px 0px #af7f5b;
@@ -122,15 +120,11 @@ body {
   }
 
   .logo {
-    height: 60px;
+    height: 68px;
   }
 }
 
-
-
-
-/* CSS DES LIENS */
-
+/* --- CSS DES LIENS --- */
 .liens-page {
   flex: 1;
   display: flex;
@@ -149,8 +143,9 @@ body {
 
 .rubrique-item {
   display: grid;
-  grid-template-columns: 44px 1fr 44px; /* Gauche icône | Milieu texte | Droite vide équilibrée */
+  grid-template-columns: 48px 1fr 48px; /* Icône à gauche | Texte centré | Symétrie à droite */
   align-items: center;
+  min-height: 64px;
   padding: 14px 18px;
   background-color: #fff6ea;
   border: 2px solid #af7f5b;
@@ -164,8 +159,9 @@ body {
 .rubrique-icone {
   grid-column: 1;
   justify-self: start;
-  width: 28px;
-  height: 28px;
+  align-self: center;
+  width: 30px;
+  height: 30px;
   object-fit: contain;
   border-radius: 6px;
 }
@@ -173,9 +169,11 @@ body {
 .rubrique-texte {
   grid-column: 2;
   justify-self: center;
+  align-self: center;
   text-align: center;
-  font-size: 1.15rem;
-  font-weight: 600;
+  font-size: 1.45rem; /* Texte plus grand et centré */
+  font-weight: 700;
+  line-height: 1.2;
   text-shadow: 0 1px 1px rgba(175, 127, 91, 0.45);
 }
 
@@ -192,16 +190,17 @@ body {
 
 @media (max-width: 520px) {
   .rubrique-item {
-    grid-template-columns: 32px 1fr 32px;
+    grid-template-columns: 36px 1fr 36px;
+    min-height: 58px;
     padding: 12px 14px;
   }
 
   .rubrique-texte {
-    font-size: 1rem;
+    font-size: 1.2rem;
   }
 
   .rubrique-icone {
-    width: 24px;
-    height: 24px;
+    width: 26px;
+    height: 26px;
   }
 }
